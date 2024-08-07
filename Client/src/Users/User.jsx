@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./User.css";
+import { Link } from "react-router-dom";
 
 function User() {
   const [info, setInfo] = useState([
@@ -14,6 +15,9 @@ function User() {
   return (
     <>
       <div className="Users">
+        <Link to="/createUsers">
+          <button>Add +</button>{" "}
+        </Link>
         <table>
           <thead>
             <tr>
@@ -25,7 +29,7 @@ function User() {
           </thead>
           <tbody>
             {info.map((users, index) => (
-              <tr>
+              <tr key={index}>
                 <td>{users.name}</td>
                 <td>{users.email}</td>
                 <td>{users.age}</td>
