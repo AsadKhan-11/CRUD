@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+  color: black;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd; /* Adds border to cells */
+}
+th {
+  background-color: #f4f4f4;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #888888;
+}
+button {
+  height: 40px;
+  width: 100px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(30, 238, 30);
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 16px;
+}
