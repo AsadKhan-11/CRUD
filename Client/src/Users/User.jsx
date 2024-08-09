@@ -6,13 +6,18 @@ import axios from "axios";
 
 function User() {
   const [user, setUser] = useState([]);
-  const [info, setInfo] = useState([
-    {
-      name: "asad",
-      email: "asad@gmail.com",
-      age: 22,
-    },
-  ]);
+
+  const handleClick = (id) => {
+    axios
+      .delete("http://localhost:5000/deleteUsers/" + id)
+      .then((del) => {
+        console.log(del);
+        setUser((prevUser) => prevUser.filter((u) => u._id !== id));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     axios
@@ -43,7 +48,10 @@ function User() {
                 <td>{users.email}</td>
                 <td>{users.age}</td>
                 <td>
-                  <button>Update</button> <button>Delete</button>
+                  <button>Update</button>{" "}
+                  <button onClick={(e) => handleClick(users._id)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
