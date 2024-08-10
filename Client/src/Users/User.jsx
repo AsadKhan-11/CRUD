@@ -48,7 +48,9 @@ function User() {
                 <td>{users.email}</td>
                 <td>{users.age}</td>
                 <td>
-                  <button>Update</button>{" "}
+                  <Link to={`/updateUsers/${users._id}`}>
+                    <button>Update</button>
+                  </Link>
                   <button onClick={(e) => handleClick(users._id)}>
                     Delete
                   </button>
